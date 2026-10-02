@@ -47,17 +47,29 @@ export class LoginComponent {
         response?.tokenValue;
 
       if (!token) {
-        throw new Error('Token bulunamadı.');
+        throw new Error('Giriş işlemi tamamlanamadı. Lütfen tekrar deneyin.');
       }
 
       localStorage.setItem('eimza.apiUrl', this.apiUrl);
       localStorage.setItem('eimza.bearerToken', token);
 
-      this.toastr.success('Giriş başarılı. Ana sayfaya yönlendiriliyorsunuz.', 'Başarılı');
+      this.toastr.success('Giriş başarılı! Hoş geldiniz. Ana sayfaya yönlendiriliyorsunuz.', 'Başarılı');
+
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       this.loginSuccess.emit(token);
     } catch (error: any) {
-      const reason = error?.error?.message || error?.message || 'Giriş başarısız oldu.';
-      this.toastr.error(reason, 'Hata');
+      const status = error?.status;
+      const reason = error?.error?.message || error?.message || '';
+
+      const message =
+        status === 401 || status === 400 ||
+        /password|şifre|parola|invalid|unauthorized|kullanıcı|username|not found|notfound/i.test(reason)
+          ? 'Kullanıcı adı veya şifre hatalı. Lütfen bilgilerinizi kontrol edip tekrar deneyin.'
+          : status >= 500 || !reason
+            ? 'Sunucuya bağlanılamadı. Lütfen biraz sonra tekrar deneyin.'
+            : 'İşlem sırasında bir sorun oluştu. Lütfen tekrar deneyin.';
+
+      this.toastr.error(message, 'Uyarı');
     } finally {
       this.isLoading = false;
     }

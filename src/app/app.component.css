@@ -1,7 +1,43 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   color: #122a22;
+}
+
+.app-root-content {
+  flex: 1;
+}
+
+.app-footer {
+  background: linear-gradient(90deg, #0a2a4a 0%, #0d4f86 50%, #1a73c4 100%);
+  box-shadow: 0 -10px 24px rgba(10, 42, 74, 0.12);
+}
+
+.footer-inner {
+  width: min(1000px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.footer-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.footer-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .app-shell {
@@ -224,5 +260,20 @@
   .execute-btn,
   .clear-btn {
     width: 100%;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px 0;
+    gap: 8px;
+  }
+
+  .footer-divider {
+    display: none;
+  }
+
+  .footer-text {
+    white-space: normal;
   }
 }

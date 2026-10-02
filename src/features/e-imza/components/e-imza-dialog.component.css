@@ -8,6 +8,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(180deg, #f4f9ff 0%, #eef6f7 100%);
 }
 
 .topbar {
@@ -157,10 +158,10 @@
 }
 
 .workspace-panel {
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(23, 51, 43, 0.045);
+  border: 1px solid #dfeaf7;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 16px 38px rgba(17, 58, 94, 0.06);
 }
 
 .signing-panel {
@@ -478,17 +479,25 @@
 .page-footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 16px;
   padding: 17px max(24px, calc((100vw - 1100px) / 2));
-  border-top: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.78);
-  color: #819089;
+  border-top: 1px solid rgba(17, 72, 123, 0.1);
+  background: linear-gradient(90deg, #dfeeff 0%, #cfe7ff 35%, #b7d9ff 100%);
+  color: #123d6f;
   font-size: 10px;
+  letter-spacing: 0.04em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-.page-footer span:first-child {
-  color: var(--green-dark);
+.page-footer-brand {
+  color: #0c3f79;
   font-weight: 800;
+}
+
+.page-footer-note {
+  color: #1a4f89;
+  font-weight: 700;
 }
 
 @media (max-width: 767.98px) {

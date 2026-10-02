@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
+import { NgIfContext } from '@angular/common';
 
 interface AnchorRequestPayload {
   anchorName: string;
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit {
   apiRoute = '/api/Auth/Login';
   bearerToken = '';
   isLoggedIn = false;
+  currentYear = new Date().getFullYear();
   anchorName = '';
   documentId = 'doc-001';
   loginUserName = 'Admin';
@@ -55,6 +57,7 @@ export class AppComponent implements OnInit {
     email: '',
     status: 'Aktif'
   };
+appMainPage: TemplateRef<NgIfContext<boolean>>;
 
   constructor(
     private readonly http: HttpClient,
@@ -74,8 +77,7 @@ export class AppComponent implements OnInit {
       this.bearerToken = savedToken;
     }
 
-    this.isLoggedIn = false;
-    this.router.navigate(['/login']);
+    this.isLoggedIn = !!savedToken;
 
     if (!this.anchorName) {
       this.anchorName = 'Anchor Demo';
@@ -87,7 +89,6 @@ export class AppComponent implements OnInit {
     this.isLoggedIn = true;
     this.statusText = 'Token alındı';
     this.saveSettings();
-    this.router.navigate(['/']);
   }
 
   get fullApiUrl(): string {

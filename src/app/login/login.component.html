@@ -31,7 +31,10 @@
 
       <button class="btn btn-primary login-btn w-100" type="button" (click)="login()" [disabled]="isLoading">
         <span *ngIf="!isLoading">LOGIN</span>
-        <span *ngIf="isLoading">LOGGING IN...</span>
+        <span *ngIf="isLoading">
+          <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+          LOGGING IN...
+        </span>
       </button>
     </div>
   </div>

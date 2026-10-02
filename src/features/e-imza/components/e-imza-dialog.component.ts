@@ -134,7 +134,6 @@ import { DocumentToSign, SignatureStandard, SignResult } from '../../../core/mod
         </div>
       </main>
 
-      <footer class="page-footer"><span>e-imza</span><span>Güvenli elektronik imza alanı</span></footer>
     </div>
   `
 })

@@ -24,7 +24,10 @@ import { EImzaDialogComponent } from '../features/e-imza/components/e-imza-dialo
       timeOut: 3500,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
-      progressBar: true
+      progressBar: true,
+      closeButton: true,
+      newestOnTop: true,
+      enableHtml: false
     }),
     AppRoutingModule,
     EImzaDialogComponent

@@ -30,6 +30,33 @@ body {
 	background-size: 18px 18px;
 }
 
+#toast-container {
+  position: fixed !important;
+  top: 16px !important;
+  right: 16px !important;
+  left: auto !important;
+  bottom: auto !important;
+}
+
+#toast-container > div {
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+  border-radius: 12px;
+  padding: 14px 16px 14px 14px;
+  border-left: 5px solid transparent;
+}
+
+#toast-container > .toast-success {
+  border-left-color: #2e7d32;
+}
+
+#toast-container > .toast-error {
+  border-left-color: #d32f2f;
+}
+
+#toast-container > div .toast-message {
+  font-weight: 600;
+}
+
 button,
 input,
 select {
