@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "./features/e-imza/components/e-imza-dialog.component.css";
+
+:root {
+	--ink: #17332b;
+	--muted: #6b7d76;
+	--paper: #f4f8f6;
+	--line: #dce8e2;
+	--green: #08745b;
+	--green-dark: #075744;
+	--coral: #c55d43;
+	--bs-primary: #08745b;
+	--bs-primary-rgb: 8, 116, 91;
+	--bs-body-color: var(--ink);
+	--bs-body-bg: var(--paper);
+	--bs-border-color: var(--line);
+	font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+}
+
+html,
+body {
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	color: var(--ink);
+	background-color: var(--paper);
+	background-image: radial-gradient(#d9e8e0 0.7px, transparent 0.7px);
+	background-size: 18px 18px;
+}
+
+button,
+input,
+select {
+	font: inherit;
+}
