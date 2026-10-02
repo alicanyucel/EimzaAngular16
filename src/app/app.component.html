@@ -1,1 +1,8 @@
-<router-outlet></router-outlet>
+<div *ngIf="!isLoggedIn; else appMainPage">
+  <app-login [apiUrl]="apiUrl" (loginSuccess)="handleLoginSuccess($event)"></app-login>
+</div>
+
+<ng-template #appMainPage>
+  <app-e-imza-dialog></app-e-imza-dialog>
+</ng-template>
+

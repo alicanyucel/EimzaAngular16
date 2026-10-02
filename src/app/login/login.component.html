@@ -1,0 +1,38 @@
+<div class="login-page">
+  <div class="login-card shadow-sm border-0">
+    <div class="text-center mb-4">
+      <div class="avatar-circle mx-auto mb-3">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 12c2.76 0 5-2.24 5-5S14.76 2 12 2 7 4.24 7 7s2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v1h20v-1c0-3.33-6.67-5-10-5z" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="login-form">
+      <div class="input-group mb-3">
+        <span class="input-group-text bg-white border-end-0">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 12c2.76 0 5-2.24 5-5S14.76 2 12 2 7 4.24 7 7s2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v1h20v-1c0-3.33-6.67-5-10-5z" />
+          </svg>
+        </span>
+        <input type="text" class="form-control border-start-0" [(ngModel)]="emailOrUserName" placeholder="Username" />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text bg-white border-end-0">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18 10h-1V7a5 5 0 10-10 0v3H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2zm-6 7.5a1.5 1.5 0 113 0 1.5 1.5 0 01-3 0zm2.5-7.5h-5V7a2.5 2.5 0 015 0v3z" />
+          </svg>
+        </span>
+        <input type="password" class="form-control border-start-0" [(ngModel)]="password" placeholder="Password" />
+      </div>
+
+     
+
+      <button class="btn btn-primary login-btn w-100" type="button" (click)="login()" [disabled]="isLoading">
+        <span *ngIf="!isLoading">LOGIN</span>
+        <span *ngIf="isLoading">LOGGING IN...</span>
+      </button>
+    </div>
+  </div>
+</div>

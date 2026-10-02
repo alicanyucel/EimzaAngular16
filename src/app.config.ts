@@ -1,7 +1,7 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter, type Routes } from '@angular/router';
+import { provideRouter, Routes } from '@angular/router';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { EImzaDialogComponent } from './app/features/e-imza/components/e-imza-dialog.component';
+import { EImzaDialogComponent } from './features/e-imza/components/e-imza-dialog.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'e-imza', pathMatch: 'full' },

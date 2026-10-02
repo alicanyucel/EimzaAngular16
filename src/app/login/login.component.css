@@ -1,0 +1,106 @@
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #cfe2ef;
+  padding: 24px;
+}
+
+.login-card {
+  width: min(460px, 100%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(13, 115, 217, 0.25);
+  border-radius: 10px;
+  padding: 26px 24px 18px;
+}
+
+.avatar-circle {
+  width: 92px;
+  height: 92px;
+  border: 3px solid #0d73d9;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.avatar-circle svg {
+  width: 42px;
+  height: 42px;
+  fill: #0d73d9;
+}
+
+.input-group {
+  border: 2px solid #0d73d9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.input-group-text {
+  border: none;
+  border-right: 0;
+  color: #0d73d9;
+  padding: 0 14px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+}
+
+.input-group-text svg {
+  width: 18px;
+  height: 18px;
+  fill: #0d73d9;
+}
+
+.form-control {
+  border: none;
+  background: transparent;
+  color: #0d73d9;
+  font-size: 1.05rem;
+  height: 52px;
+  box-shadow: none !important;
+}
+
+.form-control::placeholder {
+  color: #0d73d9;
+  opacity: 0.9;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  background: transparent;
+}
+
+.login-btn {
+  height: 58px;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: #0d73d9;
+  border: none;
+}
+
+.login-btn:hover {
+  background: #0b66c2;
+}
+
+.text-primary {
+  color: #0d73d9 !important;
+}
+
+.form-check-input:checked {
+  background-color: #0d73d9;
+  border-color: #0d73d9;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 22px 18px 16px;
+  }
+
+  .login-btn {
+    font-size: 1.4rem;
+  }
+}
+

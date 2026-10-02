@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EImzaDialogComponent } from '../features/e-imza/components/e-imza-dialog.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'e-imza', pathMatch: 'full' },
-  { path: 'e-imza', component: EImzaDialogComponent },
-  { path: '**', redirectTo: 'e-imza' }
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
